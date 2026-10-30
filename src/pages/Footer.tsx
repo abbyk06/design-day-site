@@ -33,7 +33,7 @@ const Footer = () => {
           />
         </a>
         {/* Instagram */}
-        <a href="https://www.instagram.com/uoceed">
+        <a href="https://www.instagram.com/cgec.uottawa.ceed">
           <FontAwesomeIcon
             icon={brands("instagram")}
             size="xl"
@@ -44,13 +44,11 @@ const Footer = () => {
       <p className="text-white text-center text-sm font-light leading-relaxed">
         {/* Copyright */}
         <FontAwesomeIcon icon={regular("copyright")} />{" "}
-        {new Date().getFullYear()} —{" "}
-        {/* CEED */}
+        {new Date().getFullYear()} — {/* CEED */}
         <a className="underline" href="https://engineering.uottawa.ca/CEED">
           {t("centre_for_entrepreneurship_and_engineering_design")}
         </a>{" "}
-        AND{" "}
-        {/* GitHub contributors */}
+        AND {/* GitHub contributors */}
         <a
           className="underline"
           href="https://github.com/uOttawa-Makerspace/design-day-react/graphs/contributors"
