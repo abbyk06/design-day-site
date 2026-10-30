@@ -14,22 +14,16 @@ const classNames = (...classes: string[]) => {
 
 /**
  * Displays the navigation bar for the application.
- *
- * This component uses the Disclosure component from Headless UI to handle
- * the mobile menu toggle. It displays the application title and navigation
- * links for different sections. It also includes a button to switch between
- * languages (English and French).
  */
 const Header = () => {
   const { t } = useTranslation();
 
-  // Navigation links for the header
+  // Navigation links for the header (removed makerepo from here since it's now a brand link)
   const navigation = [
     { name: t("home"), href: "#home", current: true },
     { name: t("schedule"), href: "#schedule", current: false },
     { name: t("presentations"), href: "#presentation", current: false },
     { name: t("sponsors"), href: "#sponsors", current: false },
-    { name: t("makerepo"), href: "https://makerepo.com", current: false },
   ];
 
   return (
@@ -44,14 +38,27 @@ const Header = () => {
                   <FontAwesomeIcon icon={solid("bars")} size="lg" />
                 </Disclosure.Button>
               </div>
-              {/* Application title */}
+
+              {/* Left side: MakerRepo branding + Application title + Desktop nav */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center text-white">
+                {/* MakerRepo Branding Link */}
+                <div className="flex flex-shrink-0 items-center mr-4">
+                  <a
+                    href="https://makerepo.com"
+                    className="text-white font-bold text-lg hover:text-gray-300 transition-colors"
+                  >
+                    MakerRepo
+                  </a>
+                </div>
+
+                {/* Application title */}
+                <div className="flex flex-shrink-0 items-center text-gray-400 text-sm sm:text-base mr-6">
                   {t("design_day", {
                     year: config.year,
                     semester: t(`semesters.${config.semester}`),
                   })}
                 </div>
+
                 {/* Desktop navigation links */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -73,6 +80,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
+
               {/* Language switch button */}
               <button
                 onClick={() =>
@@ -89,6 +97,7 @@ const Header = () => {
               </button>
             </div>
           </div>
+
           {/* Mobile navigation menu */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
@@ -108,6 +117,13 @@ const Header = () => {
                   {item.name}
                 </Disclosure.Button>
               ))}
+              <Disclosure.Button
+                as="a"
+                href="https://makerepo.com"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >
+                MakerRepo
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>
