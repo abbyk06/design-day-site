@@ -8,8 +8,8 @@
   "students": "Students",
   "judges": "Judges",
   "design_day": "{{ semester }} {{ year }} Design Day",
-  "home_paragraph": "Creativity and ingenuity on display! Design Day promises to amaze you with our students' innovation and inspiration! Students have worked closely with external partners of the Faculty to develop solutions for real clients. This event showcases engineering design projects and celebrates the achievements of our students.",
-  "what_is_design_day": "For more information on Design Day, click here",
+  "home_paragraph": "Creativity and ingenuity on display! Design Day promises to amaze you with our students' innovation and inspiration! Students have worked closely with external partners of the Faculty of Engineering to develop solutions for real clients. This event showcases engineering design projects and celebrates the achievements of our students.",
+  "what_is_design_day": "For more information on Design Day, click here.",
   "what_is_design_day_url": "https://www.uottawa.ca/faculty-engineering/centre-entrepreneurship-engineering-design/design-day",
   "schedule_paragraph": "Welcome to {{ semester }} {{ year }} Design Day. This two-day schedule will help you find your way around the presentations. Please join us in the STEM and SITE buildings to see the projects.",
   "semesters": {

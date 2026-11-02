@@ -1,35 +1,29 @@
-import backgroundImg from "../images/home-bg.jpg";
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import config from "../config/config";
-import { useTranslation } from "react-i18next";
+import homeImgOne from "../images/home-1.jpg"; // replace with your pictures
+import homeImgTwo from "../images/home-2.jpg";
 
-/**
- * Displays the landing section of the application.
- *
- * This component includes a background image, the title of the event, a
- * brief description, and a button that links to the schedule section.
- */
 const Home = () => {
   const { t } = useTranslation();
 
   return (
     <div
       id="home"
-      className="bg-center min-h-650 bg-fixed"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
+      className="min-h-650 bg-[#1a2332] text-white flex items-center overflow-hidden"
     >
-      <div className="lg:w-2/3 flex items-center justify-center py-10 px-5">
-        <div className="bg-white p-4 rounded-2xl lg:w-2/3">
-          {/* Event title */}
-          <h1 className="text-5xl font-normal leading-normal mt-0 mb-2">
+      <div className="mx-auto w-full max-w-7xl px-6 py-24 grid lg:grid-cols-2 gap-10 items-center">
+        {/* Left: text */}
+        <div>
+          <h1 className="text-5xl font-semibold leading-tight mt-0 mb-4">
             {t("design_day", {
               year: config.year,
               semester: t(`semesters.${config.semester}`),
             })}
           </h1>
-          {/* Event description */}
-          <p className="text-base font-light leading-relaxed mt-0 mb-4">
+
+          <p className="text-lg font-light leading-relaxed mt-0 mb-6 text-gray-200">
             {t("home_paragraph")}{" "}
             <a
               href={t("what_is_design_day_url") ?? ""}
@@ -38,7 +32,7 @@ const Home = () => {
               {t("what_is_design_day")}
             </a>
           </p>
-          {/* Link to schedule section */}
+
           <a href="#schedule">
             <button
               type="button"
@@ -48,6 +42,20 @@ const Home = () => {
               <FontAwesomeIcon className="ml-2" icon={solid("arrow-down")} />
             </button>
           </a>
+        </div>
+
+        {/* Right: two pictures */}
+        <div className="relative h-80 lg:h-[28rem]">
+          <img
+            src={homeImgOne}
+            alt=""
+            className="absolute top-0 right-0 w-2/3 rounded-2xl shadow-xl object-cover"
+          />
+          <img
+            src={homeImgTwo}
+            alt=""
+            className="absolute bottom-0 left-0 w-1/2 rounded-2xl shadow-xl object-cover"
+          />
         </div>
       </div>
     </div>

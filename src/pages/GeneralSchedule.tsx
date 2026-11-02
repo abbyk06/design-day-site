@@ -5,41 +5,27 @@ import ScheduleTable from "./ScheduleTable";
 import { DayType, useSelectedDay } from "./useSelectedDay";
 
 type AudienceType = "judges" | "students";
+const SHARED_DAY_STYLE = {
+  card: "border-gray-200 text-gray-600 hover:border-ceed",
+  cardActive: "border-ceed bg-gray-50 text-gray-900 shadow-md",
+  badge: "bg-ceed text-white",
+  banner: "bg-ceed text-white",
+  bar: "border-ceed",
+};
 
 // Full class strings are used (not template fragments) so Tailwind can detect them.
-const DAY_STYLES: Record<
-  DayType,
-  {
-    card: string;
-    cardActive: string;
-    badge: string;
-    banner: string;
-    bar: string;
-  }
-> = {
-  1: {
-    card: "border-gray-200 text-gray-600 hover:border-sky-300",
-    cardActive: "border-sky-500 bg-sky-50 text-sky-900 shadow-md",
-    badge: "bg-sky-500 text-white",
-    banner: "bg-sky-500 text-white",
-    bar: "border-sky-500",
-  },
-  2: {
-    card: "border-gray-200 text-gray-600 hover:border-violet-300",
-    cardActive: "border-violet-500 bg-violet-50 text-violet-900 shadow-md",
-    badge: "bg-violet-500 text-white",
-    banner: "bg-violet-500 text-white",
-    bar: "border-violet-500",
-  },
+const DAY_STYLES: Record<DayType, typeof SHARED_DAY_STYLE> = {
+  1: SHARED_DAY_STYLE,
+  2: SHARED_DAY_STYLE,
+};
+
+const SHARED_AUDIENCE_STYLE = {
+  active: "bg-ceed text-white shadow",
 };
 
 const AUDIENCE_STYLES: Record<AudienceType, { active: string }> = {
-  students: {
-    active: "bg-orange-500 text-white shadow",
-  },
-  judges: {
-    active: "bg-ceed text-white shadow",
-  },
+  students: SHARED_AUDIENCE_STYLE,
+  judges: SHARED_AUDIENCE_STYLE,
 };
 
 // Component that displays a 2-day schedule, filtered by audience (student / judge & sponsor).

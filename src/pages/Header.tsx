@@ -4,21 +4,16 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { useTranslation } from "react-i18next";
 import config from "../config/config";
 import i18n from "i18next";
+import useHideOnScroll from "../hooks/useHideOnScroll";
 
-/**
- * Utility function to combine CSS classes.
- */
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
-/**
- * Displays the navigation bar for the application.
- */
 const Header = () => {
   const { t } = useTranslation();
+  const visible = useHideOnScroll();
 
-  // Navigation links for the header (removed makerepo from here since it's now a brand link)
   const navigation = [
     { name: t("home"), href: "#home", current: true },
     { name: t("schedule"), href: "#schedule", current: false },
@@ -27,7 +22,14 @@ const Header = () => {
   ];
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure
+      as="nav"
+      className={classNames(
+        "fixed top-0 left-0 w-full z-50 bg-[#1a2332]/90 backdrop-blur",
+        "transition-transform duration-300",
+        visible ? "translate-y-0" : "-translate-y-full"
+      )}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -39,9 +41,7 @@ const Header = () => {
                 </Disclosure.Button>
               </div>
 
-              {/* Left side: MakerRepo branding + Application title + Desktop nav */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                {/* MakerRepo Branding Link */}
                 <div className="flex flex-shrink-0 items-center mr-4">
                   <a
                     href="https://makerepo.com"
@@ -51,7 +51,6 @@ const Header = () => {
                   </a>
                 </div>
 
-                {/* Application title */}
                 <div className="flex flex-shrink-0 items-center text-gray-400 text-sm sm:text-base mr-6">
                   {t("design_day", {
                     year: config.year,
@@ -59,7 +58,6 @@ const Header = () => {
                   })}
                 </div>
 
-                {/* Desktop navigation links */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -81,7 +79,6 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Language switch button */}
               <button
                 onClick={() =>
                   i18n.changeLanguage(
@@ -98,7 +95,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Mobile navigation menu */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (

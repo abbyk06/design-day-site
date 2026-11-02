@@ -8,7 +8,7 @@
   "students": "Étudiants",
   "judges": "Juges",
   "design_day": "Journée du design {{ semester }} {{ year }}",
-  "home_paragraph": "Ingéniosité et créativité en valeur ! La Journée du design saura vous épater par l'innovation et l'inspiration de nos étudiants ! En collaboration avec des partenaires de l'industrie et de la communauté, nos étudiants ont développé des solutions concrètes pour leurs clients. Cet événement offre aux étudiants l'occasion de présenter leurs projets de conception, de célébrer leur réussite et de gagner des prix.",
+  "home_paragraph": "Créativité et ingéniosité au rendez-vous ! La Journée de la conception promets de vous émerveiller par l'innovation et l'inspiration de nos étudiants ! Les étudiants ont travaillé en étroite collaboration avec des partenaires externes de la Faculté de génie pour élaborer des solutions destinées à de véritables clients. Cet événement met en valeur les projets de conception en ingénierie et célèbre les réussites de nos étudiants.",
   "what_is_design_day": "Pour plus d'informations sur la Journée du design, cliquez ici",
   "what_is_design_day_url": "https://www.uottawa.ca/faculte-genie/centre-genie-entrepreneurial-conception/journee-design",
   "schedule_paragraph": "Bienvenue à la Journée du design de l'{{ semester }} {{ year }}. Cet horaire sur deux jours vous aidera à vous orienter durant les présentations. Rejoignez-nous dans les édifices STEM et SITE pour voir les projets.",
@@ -53,5 +53,9 @@
   "show_both_days": "Afficher les deux jours",
   "showing": "Affichage",
   "showing_both_days": "Affichage des deux jours",
-  "no_results": "Aucune présentation ne correspond à votre recherche ou à la journée choisie."
+  "no_results": "Aucune présentation ne correspond à votre recherche ou à la journée choisie.",
+
+  "two_day_notice_title": "Nouveau cette année : le Design Day dure 2 jours !",
+  "two_day_notice_body": "Les années précédentes, le Design Day avait lieu en une seule journée. En raison du nombre d'étudiants participants cette année, les présentations sont réparties sur deux jours.",
+  "two_day_notice_action": "Consultez l'horaire ci-dessous pour savoir quel jour vous présentez ou assistez."
 }
